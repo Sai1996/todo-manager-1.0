@@ -15,8 +15,8 @@ A simple tool that helps manage to-do items
 * Component - Input Box
 
 * Component - TodoItem _(lines to separate them)_
-    * Checkbox 
+    * isSelected
     * Text **_(automatically split into lines and always keep a fixed width)_**
-    * Edit _(changes to check while editting)_ & complete signs **_(only shown when hovered)_**
+    * isEditting _(changes to check while editting)_ & isCompleted signs **_(only shown when hovered)_**
 *  Component - Delete button **_(show hidden icon from right to left when hovered)_**
 * Slider **_(expand only within the range of todo items, not to reach the upper part)_**
