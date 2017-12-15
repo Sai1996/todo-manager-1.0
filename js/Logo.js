@@ -1,4 +1,4 @@
 function Logo(){};
 Logo.prototype.render = function(){
-  return "<img src=\"./img/logo.png\">";
+  return "<img class=\"todoLogo\" src=\"./img/logo.png\">";
 };
