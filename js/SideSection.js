@@ -37,15 +37,12 @@ function SideSection() {
   }]);
 }
 SideSection.prototype.render = function () {
-  
-  return "\<div>\
-  <div>" +
-    this.logo.render() +
-    "</div>\
-  <div>" +
-    this.statusMenu.render() + 
-    "</div>\
-     <div>" +
-    this.dateMenu.render() +
-  "</div> </div>";
+  var wrapper = document.createElement("div");
+  for(var i = 0; i < 3; i++){
+    wrapper.appendChild(document.createElement("div"));
+  }
+  wrapper.children[0].appendChild(this.logo.render());
+  wrapper.children[1].appendChild(this.statusMenu.render());
+  wrapper.children[2].appendChild(this.dateMenu.render());
+  return wrapper;
 };

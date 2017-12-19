@@ -4,5 +4,13 @@ function MenuItem(icon,text,isSelected){
   this.isSelected = isSelected;
 };
 MenuItem.prototype.render = function(){
-  return "<div class=\"forSeparate\"><div class=\"fa fa-" + this.icon + " forIcon\"> </div> <div class=\"forTextAfterIcon\">" + this.text +"</div></div>";
+  var wrapper = document.createElement("div");
+  wrapper.id = this.text;
+  wrapper.className = "forSeparate";
+  wrapper.appendChild(document.createElement("div"));
+  wrapper.children[0].className = "fa fa-" + this.icon + " forIcon";
+  wrapper.appendChild(document.createElement("div"));
+  wrapper.children[1].className = "forTextAfterIcon";
+  wrapper.children[1].innerText = this.text;
+  return wrapper;
 };

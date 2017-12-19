@@ -48,3 +48,8 @@
 .forSeparate{
   display: block;
 }
+
+.onClick{
+  display: block;
+  background-color: #1a2e71;
+}
