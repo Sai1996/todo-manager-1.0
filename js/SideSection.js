@@ -38,6 +38,7 @@ function SideSection() {
 }
 SideSection.prototype.render = function () {
   var wrapper = document.createElement("div");
+  wrapper.className = "grad";
   for(var i = 0; i < 3; i++){
     wrapper.appendChild(document.createElement("div"));
   }

@@ -5,7 +5,7 @@ function Menu(title,menuItemData){
 Menu.prototype.render = function(){
   var menuItems = this.menuItemData.map(function(data){
     return new MenuItem(data.icon,data.text,data.isSelected).render();
-  }).join("");
+  });
   var wrapper = document.createElement("div");
   wrapper.appendChild(document.createElement("div"));
   wrapper.children[0].className = "menuTitle";
