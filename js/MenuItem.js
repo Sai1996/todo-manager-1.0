@@ -15,11 +15,11 @@ MenuItem.prototype.render = function(){
   wrapper.children[1].innerText = this.text;
   var t = this;
   wrapper.addEventListener("click",function(){
-    controller.state[t.text].isSelected = true;
+    controller.state.statusMenuData.select;
     controller.render("app");
   });
   if(controller.state[t.text].isSelected){
-    wrapper.className += " onClick";
+    wrapper.className += " onClick"; 
   }
   return wrapper;
 };

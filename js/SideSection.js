@@ -1,40 +1,7 @@
 function SideSection() {
   this.logo = new Logo();
-  this.statusMenu = new Menu("Status",[{
-    icon:"bars",
-    text:"All",
-    isSelected:false
-  },
-  {
-    icon:"refresh",
-    text:"Active",
-    isSelected:false
-  },
-  {
-    icon:"check-square",
-    text:"Completed",
-    isSelected:false
-  }]);
-  this.dateMenu = new Menu("Date",[{
-    icon:"calendar",
-    text:"Yesterday",
-    isSelected:false
-  },
-  {
-    icon:"calendar",
-    text:"Today",
-    isSelected:false
-  },
-  {
-    icon:"calendar",
-    text:"Tomorrow",
-    isSelected:false
-  },
-  {
-    icon:"calendar",
-    text:"Other Date",
-    isSelected:false
-  }]);
+  this.statusMenu = new Menu(controller.state.statusMenuData.title,controller.state.statusMenuData.menuItems);
+  this.dateMenu = new Menu(controller.state.dateMenuData.title,controller.state.dateMenuData.menuItems);
 }
 SideSection.prototype.render = function () {
   var wrapper = document.createElement("div");
