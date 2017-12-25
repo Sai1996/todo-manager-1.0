@@ -3,12 +3,8 @@ function BodySection() {
   this.todoItem = new TodoItem();
 };
 BodySection.prototype.render = function () {
-  return "<div>\
-   <div>" +
-    this.inputbox.render() +
-    "</div>\
-    <div>" +
-    this.todoItem.render() +
-    "</div>\
-   </div>";
+  var wrapper = document.createElement("div");
+  wrapper.appendChild(document.createElement("div"));
+  wrapper.appendChild(this.inputbox.render());
+  wrapper.appendChild(this.todoItem.render());
 };

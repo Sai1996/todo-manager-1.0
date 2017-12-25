@@ -1,8 +1,8 @@
-function MenuItem(icon,text,isSelected){
+function MenuItem(icon,text,isSelected,pos){
   this.icon = icon;
   this.text = text;
   this.isSelected = isSelected;
-  controller.state[this.text] = controller.state[this.text] || {};
+  this.pos = pos;
 };
 MenuItem.prototype.render = function(){
   var wrapper = document.createElement("div");
@@ -15,10 +15,17 @@ MenuItem.prototype.render = function(){
   wrapper.children[1].innerText = this.text;
   var t = this;
   wrapper.addEventListener("click",function(){
-    controller.state.statusMenuData.select;
+    switch(t.pos){
+      case "Status":
+      controller.state.statusMenuData.select(t.text);
+      break;
+      case "Date":
+      controller.state.dateMenuData.select(t.text);
+      break;
+    }
     controller.render("app");
   });
-  if(controller.state[t.text].isSelected){
+  if(t.isSelected){
     wrapper.className += " onClick"; 
   }
   return wrapper;

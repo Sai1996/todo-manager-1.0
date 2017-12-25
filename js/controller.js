@@ -22,17 +22,20 @@ var controller = {
       menuItems:[{
         icon:"bars",
         text:"All",
-        isSelected:false
+        isSelected:false,
+        pos:"Status"
       },
       {
         icon:"refresh",
         text:"Active",
-        isSelected:false
+        isSelected:false,
+        pos:"Status"
       },
       {
         icon:"check-square",
         text:"Completed",
-        isSelected:false
+        isSelected:false,
+        pos:"Status"
       }],
        select:Select
     },
@@ -41,22 +44,26 @@ var controller = {
       menuItems:[{
         icon:"calendar",
         text:"Yesterday",
-        isSelected:false
+        isSelected:false,
+        pos:"Date"
       },
       {
         icon:"calendar",
         text:"Today",
-        isSelected:false
+        isSelected:false,
+        pos:"Date"
       },
       {
         icon:"calendar",
         text:"Tomorrow",
-        isSelected:false
+        isSelected:false,
+        pos:"Date"
       },
       {
         icon:"calendar",
         text:"Other Date",
-        isSelected:false
+        isSelected:false,
+        pos:"Date"
       }],
       select:Select
     }

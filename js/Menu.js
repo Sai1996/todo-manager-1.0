@@ -4,7 +4,7 @@ function Menu(title,menuItemData){
 };
 Menu.prototype.render = function(){
   var menuItems = this.menuItemData.map(function(data){
-    return new MenuItem(data.icon,data.text,data.isSelected).render();
+    return new MenuItem(data.icon,data.text,data.isSelected,data.pos).render();
   });
   var wrapper = document.createElement("div");
   wrapper.appendChild(document.createElement("div"));
