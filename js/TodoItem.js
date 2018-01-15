@@ -5,6 +5,7 @@ function TodoItem(){
   this.html = "";
 }
 TodoItem.prototype.render = function(){
-  return "";
+  var wrapper = document.createElement("div");
+  return wrapper;
 };
 
