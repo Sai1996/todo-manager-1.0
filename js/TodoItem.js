@@ -5,17 +5,15 @@ function TodoItem(text,isEditting,isCompleted,isDelete){
   this.delete = isDelete;
 }
 TodoItem.prototype.render = function(){
-  var wrapper = document.createElement("div");
-  wrapper.appendChild(document.createElement("div"));
-  wrapper.children[0].appendChild(document.createElement("div"));
-  wrapper.children[0].children[0].className = "squaredFour";
-  wrapper.children[0].children[0].appendChild(document.createElement("input"));
-  wrapper.children[0].children[0].children[0].type = "checkbox";
-  wrapper.children[0].children[0].children[0].value = "None";
-  wrapper.children[0].children[0].children[0].id = "squaredFour";
-  wrapper.children[0].children[0].children[0].name = "check";
-  wrapper.children[0].children[0].appendChild(document.createElement("label"));
-  wrapper.children[0].children[0].children[1].setAttribute('for', "squaredFour");
-  return wrapper;
+  return htmlToNode('\
+  <div class="todoItemWrapper">\
+    <div class="squaredFour">\
+      <input type="checkbox" value="None" id="squaredFour" name="check">\
+      <label for="squaredFour"></label>\
+      </div>\
+    <div class="forTodoItem">adhfjkdfksjadhuiopewiureiwopeirueuwoperithurjebdnmkloiuygfvbnkloiuyghbnmhgfdsadfghgfdsdfghjgfdsasdfghjhgfdsaadhfjkdfksjadhuiopewiureiwopeirueuwoperithurjebdnmkloiuygfvbnkloiuyghbnmhgfdsadfghgfdsdfghjgfdsasdfghjhgfdsa</div>\
+    <div class="fa fa-pencil forEdit"></div>\
+    <div class="fa fa-times forTimes"></div>\
+  </div>');
 };
 
