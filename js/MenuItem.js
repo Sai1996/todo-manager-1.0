@@ -5,14 +5,12 @@ function MenuItem(icon,text,isSelected,pos){
   this.pos = pos;
 };
 MenuItem.prototype.render = function(){
-  var wrapper = document.createElement("div");
-  wrapper.id = this.text;
-  wrapper.className = "forSeparate";
-  wrapper.appendChild(document.createElement("div"));
-  wrapper.children[0].className = "fa fa-" + this.icon + " forIcon";
-  wrapper.appendChild(document.createElement("div"));
-  wrapper.children[1].className = "forTextAfterIcon";
-  wrapper.children[1].innerText = this.text;
+  var wrapper = htmlToNode('\
+  <div id="' + this.text +'" class="forSeparate '+ (this.isSelected ? 'onClick' : '') + '">\
+    <div class="fa fa-' + this.icon + ' forIcon"></div>\
+    <div class="forTextAfterIcon">' + this.text + '</div>\
+  </div>');
+  
   var t = this;
   wrapper.addEventListener("click",function(){
     switch(t.pos){
@@ -24,9 +22,7 @@ MenuItem.prototype.render = function(){
       break;
     }
     controller.render("app");
-  });
-  if(t.isSelected){
-    wrapper.className += " onClick"; 
-  }
+  }); 
+
   return wrapper;
 };

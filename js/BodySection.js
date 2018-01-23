@@ -3,14 +3,17 @@ function BodySection() {
   this.todoItems = new TodoItem();
 };
 BodySection.prototype.render = function () {
-  var wrapper = document.createElement("div");
-  wrapper.className = "outerBackground";
-  wrapper.appendChild(document.createElement("div"));
-  wrapper.children[0].className = "innerBackground";
-  for(var i = 0; i < 2; i++){
-    wrapper.children[0].appendChild(document.createElement("div"));
-  }
-  wrapper.children[0].children[0].appendChild(this.inputbox.render());
-  wrapper.children[0].children[1].appendChild(this.todoItems.render());
-  return wrapper;
+return htmlToNode('\
+<div class="outerBackground">\
+  <div class="innerBackground">\
+    <div class="forFirstBorder"></div>\
+  <div>\
+  <div class="todo-items"></div>\
+</div>', [{
+  selector: '.forFirstBorder',
+  element: this.inputbox.render()
+}, {
+  selector: '.todo-items',
+  element: this.todoItems.render()
+}]);
 };

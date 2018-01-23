@@ -7,12 +7,15 @@ Menu.prototype.render = function(){
     return new MenuItem(data.icon,data.text,data.isSelected,data.pos).render();
   });
   var wrapper = document.createElement("div");
-  wrapper.appendChild(document.createElement("div"));
-  wrapper.children[0].className = "menuTitle";
-  wrapper.children[0].innerText = this.title;
-  wrapper.appendChild(document.createElement("div"));
   for(var i = 0; i < menuItems.length;i++){
-    wrapper.children[1].appendChild(menuItems[i]);
+    wrapper.appendChild(menuItems[i]);
   }
-  return wrapper;
-}
+  return htmlToNode('\
+    <div>\
+      <div class="menuTitle">Status</div>\
+      <div id="menuItems"> </div>\
+    </div>',[{
+      selector: "#menuItems",
+      element: wrapper
+    }]);
+};

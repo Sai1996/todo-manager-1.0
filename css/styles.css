@@ -151,6 +151,13 @@ html {
 .todoItemWrapper {
   padding-bottom: 20px;
   padding-top: 20px;
+  border-bottom: solid 1px;
+  border-bottom-color: #eeeeee;
+}
+
+.forFirstBorder{
+  border-bottom: solid 1px;
+  border-bottom-color: #eeeeee;
 }
 
 .todoItemWrapper:hover {
