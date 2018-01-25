@@ -18,4 +18,4 @@ Menu.prototype.render = function(){
       selector: "#menuItems",
       element: wrapper
     }]);
-};
+}; 

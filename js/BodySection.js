@@ -1,6 +1,7 @@
 function BodySection() {
   this.inputbox = new InputBox();
   this.todoItems = new TodoItem();
+  this.deletebutton = new DeleteButton();
 };
 BodySection.prototype.render = function () {
 return htmlToNode('\
@@ -10,6 +11,9 @@ return htmlToNode('\
   <div>\
   <div class="todo-items"></div>\
 </div>', [{
+  selector: '.forFirstBorder',
+  element: this.deletebutton.render()
+},{
   selector: '.forFirstBorder',
   element: this.inputbox.render()
 }, {
